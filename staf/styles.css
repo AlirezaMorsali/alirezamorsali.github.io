@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    background: #ffffff;
+    color: #222222;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 36px 20px 60px;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.venue {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    color: #666666;
+}
+
+h1 {
+    margin: 0 0 18px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 3rem;
+    font-weight: normal;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+}
+
+.authors,
+.affiliations,
+.links {
+    margin: 10px 0;
+    overflow-wrap: anywhere;
+}
+
+.affiliations {
+    color: #666666;
+}
+
+.links a {
+    margin: 0 10px;
+    color: #1a5fb4;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+section {
+    margin: 34px 0;
+}
+
+h2 {
+    margin: 0 0 16px;
+    font-size: 1.7rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+p,
+li,
+figcaption,
+pre {
+    font-size: 1rem;
+}
+
+ul {
+    max-width: 760px;
+    margin: 0 auto;
+    padding-left: 22px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #d9d9d9;
+    margin: 34px 0;
+}
+
+.figure-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+.two-small {
+    margin-top: 24px;
+}
+
+.single-figure {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid #d9d9d9;
+}
+
+figcaption {
+    margin-top: 10px;
+    color: #555555;
+    text-align: center;
+}
+
+.placeholder {
+    max-width: 760px;
+    margin: 18px auto 0;
+    padding: 18px;
+    border: 1px dashed #bcbcbc;
+    background: #f7f7f7;
+    color: #666666;
+    text-align: center;
+    font-style: italic;
+}
+
+pre {
+    overflow-x: auto;
+    padding: 18px;
+    background: #f5f5f5;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 720px) {
+    .page {
+        padding: 24px 14px 48px;
+    }
+
+    h1 {
+        font-size: 1.95rem;
+    }
+
+    .links a {
+        display: inline-block;
+        margin: 4px 8px;
+    }
+
+    .figure-grid {
+        grid-template-columns: 1fr;
+    }
+}

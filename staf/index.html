@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>STAF | TMLR 2026</title>
+    <meta name="description"
+        content="Project page for A Unified Theory of Sinusoidal Activation Families for Implicit Neural Representations, published in TMLR 2026.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="page">
+        <header class="hero">
+            <p class="venue">Transactions on Machine Learning Research, June 2026</p>
+            <h1>A Unified Theory of Sinusoidal Activation Families for Implicit Neural Representations</h1>
+            <p class="authors">
+                Alireza Morsali, MohammadJavad Vaez, Mohammadhossein Soltani, Amirhossein Kazerouni, Babak Taati,
+                Morteza Mohammad-Noori
+            </p>
+            <p class="affiliations">
+                McGill University, The University of Melbourne, MACSYS, University of Toronto, Vector Institute,
+                University Health Network, University of Tehran
+            </p>
+            <p class="links">
+                <a href="assets/paper/staf-tmlr-2026.pdf">Paper</a>
+                <a href="https://openreview.net/forum?id=ZDmBPYptbL" target="_blank" rel="noopener noreferrer">OpenReview</a>
+                <a href="https://github.com/AlirezaMorsali/STAF" target="_blank" rel="noopener noreferrer">Code</a>
+                <a href="#bibtex">BibTeX</a>
+                <a href="../index.html">Home</a>
+            </p>
+        </header>
+
+        <hr>
+
+        <section>
+            <h2>Abstract</h2>
+            <p>
+                Implicit Neural Representations (INRs) model continuous signals with compact neural networks and have
+                become a standard tool in vision, graphics, and signal processing. STAF studies a broad family of
+                sinusoidal activations for INRs and instantiates that view with a trainable Fourier-like activation
+                whose amplitudes, frequencies, and phases are learned directly. The paper develops a unified theoretical
+                and practical framework, including a Kronecker-equivalence result, an NTK-based capacity and
+                convergence analysis, and an initialization scheme with unit-variance post-activations. Empirically,
+                STAF is competitive and often stronger on images, audio, shapes, inverse problems, and NeRF.
+            </p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Key Contributions</h2>
+            <ul>
+                <li>Unifies SIREN and related multi-sinusoid INR activations under a single sinusoidal activation family.</li>
+                <li>Shows how trainable sinusoidal parameters expand effective frequency support and reshape optimization behavior.</li>
+                <li>Provides a practical initialization and parameter-sharing recipe that works well across INR tasks.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Image Representation</h2>
+            <p>
+                On image fitting tasks, STAF produces sharper reconstructions and stronger late-stage convergence than
+                several INR baselines in the showcased examples from the paper.
+            </p>
+            <div class="figure-grid">
+                <figure>
+                    <img src="assets/img/image-div2k.png"
+                        alt="Image reconstruction comparison and PSNR convergence curve for STAF and baselines.">
+                    <figcaption>
+                        Featured DIV2K example with qualitative reconstructions and PSNR over training.
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/img/activation-maps.png"
+                        alt="Layer-wise activation maps comparing STAF with FINER, SIREN, and WIRE.">
+                    <figcaption>
+                        Layer-wise activation maps during image reconstruction.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Theory and Initialization</h2>
+            <p>
+                The paper connects trainable sinusoidal activations to both expressive growth and optimization
+                dynamics. The figures below summarize the empirical NTK analysis and the initialization comparison used
+                in the paper.
+            </p>
+            <div class="figure-grid">
+                <figure>
+                    <img src="assets/img/ntk-eigenfunctions.png"
+                        alt="Empirical NTK eigenfunction comparison for STAF and baselines.">
+                    <figcaption>Empirical NTK eigenfunctions.</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/img/ntk-spectrum.png"
+                        alt="Empirical NTK eigenvalue spectrum for STAF and baselines.">
+                    <figcaption>Empirical NTK eigenvalue spectrum.</figcaption>
+                </figure>
+            </div>
+            <div class="figure-grid two-small">
+                <figure>
+                    <img src="assets/img/init-staf.png" alt="STAF initialization figure.">
+                    <figcaption>STAF initialization.</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/img/init-siren.png" alt="SIREN initialization figure.">
+                    <figcaption>SIREN reference initialization.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Audio</h2>
+            <p>
+                For audio reconstruction, the paper reports that STAF achieves the highest PSNR and the lowest
+                reconstruction error on the featured Bach cello example.
+            </p>
+            <figure class="single-figure">
+                <img src="assets/img/audio-waveforms.png"
+                    alt="Audio waveform and error comparison for STAF and baseline methods.">
+                <figcaption>Waveform and reconstruction error comparison from the paper.</figcaption>
+            </figure>
+            <div class="placeholder">Audio samples to be added soon.</div>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Shapes</h2>
+            <p>
+                On 3D shape representation tasks, STAF achieves the strongest average IoU and the lowest average
+                Chamfer distance among the reported methods.
+            </p>
+            <figure class="single-figure">
+                <img src="assets/img/shape-sdf.png" alt="3D shape reconstruction comparison for STAF and baselines.">
+                <figcaption>Shape reconstruction comparisons from the paper.</figcaption>
+            </figure>
+            <div class="placeholder">Interactive shape demos to be added soon.</div>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Inverse Problems</h2>
+            <p>
+                The paper also evaluates STAF on super-resolution and denoising, where the model is particularly
+                effective at recovering fine structure while remaining competitive in efficiency.
+            </p>
+            <div class="figure-grid">
+                <figure>
+                    <img src="assets/img/inverse-superres.png"
+                        alt="Super-resolution comparison figure for STAF and baseline methods.">
+                    <figcaption>4× super-resolution example.</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/img/inverse-denoising.png"
+                        alt="Image denoising comparison figure for STAF and baseline methods.">
+                    <figcaption>Denoising example under severe low-light corruption.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>NeRF</h2>
+            <p>
+                In the paper’s NeRF experiments without positional encodings, STAF remains competitive and often
+                stronger in PSNR while also improving perceptual quality on several scenes.
+            </p>
+            <figure class="single-figure">
+                <img src="assets/img/nerf-views.png"
+                    alt="NeRF novel-view synthesis comparison for STAF and baseline methods.">
+                <figcaption>Novel-view synthesis comparison with zoomed detail crops.</figcaption>
+            </figure>
+            <div class="placeholder">Rendered NeRF videos to be added soon.</div>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Paper</h2>
+            <p>
+                The full paper is available here:
+                <a href="assets/paper/staf-tmlr-2026.pdf">staf-tmlr-2026.pdf</a>
+            </p>
+        </section>
+
+        <hr>
+
+        <section id="bibtex">
+            <h2>BibTeX</h2>
+            <pre><code>@article{morsali2026staf,
+  title   = {A Unified Theory of Sinusoidal Activation Families for Implicit Neural Representations},
+  author  = {Alireza Morsali and MohammadJavad Vaez and Mohammadhossein Soltani and Amirhossein Kazerouni and Babak Taati and Morteza Mohammad-Noori},
+  journal = {Transactions on Machine Learning Research},
+  year    = {2026},
+  url     = {https://openreview.net/forum?id=ZDmBPYptbL}
+}</code></pre>
+        </section>
+    </main>
+</body>
+</html>
